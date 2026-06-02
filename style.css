@@ -1,4 +1,6 @@
-/* RESET ARCHITECTURE */
+/* ==========================================
+   RESET ARCHITECTURE & UNIVERSAL TOKENS
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +48,7 @@ nav {
 }
 .call-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(197,168,128,0.3); }
 
-/* HAMBURGER MENU BUTTON DEFAULT DESKTOP RESET */
+/* HAMBURGER MENU BUTTON */
 .hamburger-menu {
     display: none; 
     background: none;
@@ -55,7 +57,7 @@ nav {
     font-size: 1.5rem;
     cursor: pointer;
     outline: none;
-    order: 2;
+    order: 0;
 }
 
 /* HERO CONTAINER BLOCK */
@@ -313,7 +315,7 @@ section { padding: 6.5rem 6%; }
 }
 
 /* ==========================================
-   RESPONSIVE LAYOUT QUERIES & BREAKPOINTS
+   RESPONSIVE FLUID MEDIA GRID LAYOUTS
    ========================================== */
 @media (max-width: 968px) {
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -336,6 +338,10 @@ section { padding: 6.5rem 6%; }
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* மொபைல் ஹரிசாண்டல் ஸ்க்ரோல் எரரை தடுக்கும் */
+    }
+
     .hamburger-menu {
         display: block; 
     }
@@ -373,15 +379,29 @@ section { padding: 6.5rem 6%; }
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
     }
+
+    /* மொபைலுக்கான சென்டர் புட்டர் ஸ்டைல்ஸ் */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+    .brand-desc {
+        max-width: 100%;
+        margin: 0 auto 1.8rem auto;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-col ul li {
+        justify-content: center;
+    }
+    .footer-legal-links {
+        justify-content: center;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 640px) {
     .amenities-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
 }
